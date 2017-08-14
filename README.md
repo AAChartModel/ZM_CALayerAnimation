@@ -1,7 +1,7 @@
 # ZM_CALayerAnimation
 iOS绘图和动画
 
-![](https://github.com/lucking/ZM_CALayerAnimation/img1)
+![](https://github.com/lucking/ZM_CALayerAnimation/img1.png)
 
 
 
