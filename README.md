@@ -13,10 +13,10 @@ iOS绘图和动画
 0 CGContextRef context = UIGraphicsGetCurrentContext();     设置上下文,创建画板 
 1 CGContextMoveToPoint 		开始画线 起点坐标 
 2 CGContextAddLineToPoint 	画直线 
-4 CGContextAddEllipseInRect 	画一椭圆或圆 
-4 CGContextSetLineCap 		设置线条终点形状 
+4 CGContextAddEllipseInRect 画一椭圆或圆 
+4 CGContextSetLineCap 		设置线条终点形状   
 4 CGContextSetLineDash 		画虚线 
-3.CGContextAddRect 		画一方框 
+3.CGContextAddRect          画一方框   
 
 CGContextAddRects 		画多个线
 CGContextFillRect 			补充当前填充颜色的rect
