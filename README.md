@@ -1,22 +1,23 @@
 # ZM_CALayerAnimation
 iOS绘图和动画
 
+这里有你想要的 几乎所有的绘图和动画
+
 ![](https://github.com/lucking/ZM_CALayerAnimation/raw/master/img1.png)
-
-
-https://github.com/lucking/ZM_CALayerAnimation/raw/master/img1.png
 
 
 一、drawRect
 
 一般的画图基础知识总结：
-0 CGContextRef context = UIGraphicsGetCurrentContext();     设置上下文,创建画板
-1 CGContextMoveToPoint 		开始画线 起点坐标
-2 CGContextAddLineToPoint 	画直线
-4 CGContextAddEllipseInRect 	画一椭圆或圆
-4 CGContextSetLineCap 		设置线条终点形状
-4 CGContextSetLineDash 		画虚线
-3.CGContextAddRect 		画一方框
+
+0 CGContextRef context = UIGraphicsGetCurrentContext();     设置上下文,创建画板 
+1 CGContextMoveToPoint 		开始画线 起点坐标 
+2 CGContextAddLineToPoint 	画直线 
+4 CGContextAddEllipseInRect 	画一椭圆或圆 
+4 CGContextSetLineCap 		设置线条终点形状 
+4 CGContextSetLineDash 		画虚线 
+3.CGContextAddRect 		画一方框 
+
 CGContextAddRects 		画多个线
 CGContextFillRect 			补充当前填充颜色的rect
 CGContextStrokeRect 		画矩形边框：描边用当前的笔触颜色和当前的线宽。
