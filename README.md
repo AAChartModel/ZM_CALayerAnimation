@@ -1,8 +1,7 @@
 # ZM_CALayerAnimation
 iOS绘图和动画
 
-/Users/zhangmeng/Desktop/QQ20170814-172123@2x.png
-
+![](/Users/zhangmeng/Desktop/QQ20170814-172123@2x.png)
 一、drawRect
 
 一般的画图基础知识总结：
