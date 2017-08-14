@@ -1,8 +1,10 @@
 # ZM_CALayerAnimation
 iOS绘图和动画
 
-![](https://github.com/lucking/ZM_CALayerAnimation/img1.png)
+![](https://github.com/lucking/ZM_CALayerAnimation/raw/master/img1.png)
 
+
+https://github.com/lucking/ZM_CALayerAnimation/raw/master/img1.png
 
 
 一、drawRect
