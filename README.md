@@ -10,43 +10,38 @@ iOS绘图和动画
 
 一般的画图基础知识总结：
 
-    1.	 CGContextRef context = UIGraphicsGetCurrentContext();设置上下文,创建画板  
-    2.	CGContextMoveToPoint 		开始画线 起点坐标   
-    3.	CGContextAddLineToPoint 	画直线   
-    4.	CGContextAddEllipseInRect 	画一椭圆或圆  
-    5.	CGContextSetLineCap 		设置线条终点形状  
-    6.	CGContextSetLineDash 		画虚线  
-    7.	CGContextAddRect            画一方框  
-    8.	  CGContextAddRects 		画多个线  
-
-·CGContextAddRects 		画多个线
-CGContextFillRect 			补充当前填充颜色的rect
-CGContextStrokeRect 		画矩形边框：描边用当前的笔触颜色和当前的线宽。
-CGContextStrokeRectWithWidth 	指定矩形线宽度
-CGContextStrokeLineSegments 	一些直线：一次性画多条
-
-//绘制填充路径
-CGContextFillPath(context rect)
-CGContextStrokePath 		开始绘制图片轨迹
-CGContextDrawPath 		           设置绘制模式
-CGContextClosePath 		封闭当前线路
-
-5 CGContextAddArc 		//画圆弧线	画已曲线 前俩店为中心 中间俩店为起始弧度 最后一数据为0则顺时针画 1则逆时针
-5 CGContextAddArcToPoint(context,0,0, 2, 9, 40);	//先画俩条线从point 到 弟1点 ，从弟1点到弟2点的线  切割里面的圆
-6 CGContextSetShadowWithColor 	设置阴影
-7 CGContextSetRGBFillColor    	这只填充颜色
-7 CGContextSetRGBStrokeColor  	画笔颜色设置
-7 CGContextSetFillColorSpace	 颜色空间填充
-7 CGConextSetStrokeColorSpace 	颜色空间画笔设置
-8 CGContextSetAlaha 		透明度
-9 CGContextTranslateCTM 		改变画布位置
-10 CGContextSetLineWidth 		设置线的宽度
-12 CGContextAddQuadCurveToPoint 画曲线
+    1、CGContextRef context = UIGraphicsGetCurrentContext();     设置上下文,创建画板  
+    2、CGContextMoveToPoint 		开始画线 起点坐标  
+    3、CGContextAddLineToPoint 	画直线  
+    4、CGContextAddEllipseInRect 画一椭圆或圆  
+    5、CGContextSetLineCap 		设置线条终点形状  
+    6、CGContextSetLineDash 		画虚线  
+    7、CGContextAddRect          画一方框  
+    8、CGContextAddRects 		画多个线  
+    9、CGContextFillRect			补充当前填充颜色的rect  
+    10、CGContextStrokeRect 		画矩形边框：描边用当前的笔触颜色和当前的线宽。  
+    11、CGContextStrokeRectWithWidth 	指定矩形线宽度  
+    12、CGContextStrokeLineSegments 		一些直线：一次性画多条  
+    13、CGContextFillPath(context rect)	//绘制填充路径  
+    14、CGContextStrokePath 				开始绘制图片轨迹  
+    15、CGContextDrawPath                设置绘制模式  
+    16、CGContextClosePath               封闭当前线路  
+    17、CGContextAddArc                  //画圆弧线：画已曲线 前俩店为中心 中间俩店为起始弧度 最后一数据为0则顺时针画 1则逆时针  
+    18、CGContextAddArcToPoint(context,0,0, 2, 9, 40);	//先画俩条线从point 到 弟1点 ，从弟1点到弟2点的线  切割里面的圆  
+    19、 CGContextSetShadowWithColor 设置阴影  
+    20、CGContextSetRGBFillColor    	这只填充颜色  
+    21、CGContextSetRGBStrokeColor  	画笔颜色设置  
+    22、CGContextSetFillColorSpace   颜色空间填充  
+    23、CGConextSetStrokeColorSpace 	颜色空间画笔设置  
+    24、CGContextSetAlaha 			透明度  
+    25、CGContextTranslateCTM 		改变画布位置  
+    26、CGContextSetLineWidth 		设置线的宽度  
+    27、CGContextAddQuadCurveToPoint 	画曲线  
+    28、CGContextTranslateCTM(context, 0, rect.size.height); CGContextScaleCTM(context, 1.0, -1.0);反转画布  
+    29、CGContextSetInterpolationQuality 	背景内置颜色质量等级  
+    30、CGImageCreateWithImageInRect 	从原图片中取小图  
 
 
-15 CGContextTranslateCTM(context, 0, rect.size.height); CGContextScaleCTM(context, 1.0, -1.0);反转画布
-16 CGContextSetInterpolationQuality 	背景内置颜色质量等级
-16 CGImageCreateWithImageInRect 	从原图片中取小图
 17 字符串的 写入可用   NSString本身的画图方法 - (CGSize)drawInRect:(CGRect)rect withFont:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(UITextAlignment)alignment;  
 
 18 对图片放大缩小的功能就是慢了点 
