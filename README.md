@@ -11,15 +11,15 @@ iOS绘图和动画
 一般的画图基础知识总结：
 
     1、CGContextRef context = UIGraphicsGetCurrentContext();     设置上下文,创建画板  
-    2、CGContextMoveToPoint 		开始画线 起点坐标  
-    3、CGContextAddLineToPoint 	画直线  
-    4、CGContextAddEllipseInRect 画一椭圆或圆  
-    5、CGContextSetLineCap 		设置线条终点形状  
-    6、CGContextSetLineDash 		画虚线  
-    7、CGContextAddRect          画一方框  
-    8、CGContextAddRects 		画多个线  
-    9、CGContextFillRect			补充当前填充颜色的rect  
-    10、CGContextStrokeRect 		画矩形边框：描边用当前的笔触颜色和当前的线宽。  
+    2、CGContextMoveToPoint          开始画线 起点坐标  
+    3、CGContextAddLineToPoint       画直线  
+    4、CGContextAddEllipseInRect     画一椭圆或圆  
+    5、CGContextSetLineCap           设置线条终点形状  
+    6、CGContextSetLineDash          画虚线  
+    7、CGContextAddRect              画一方框  
+    8、CGContextAddRects             画多个线  
+    9、CGContextFillRect             补充当前填充颜色的rect  
+    10、CGContextStrokeRect          画矩形边框：描边用当前的笔触颜色和当前的线宽。  
     11、CGContextStrokeRectWithWidth 	指定矩形线宽度  
     12、CGContextStrokeLineSegments 		一些直线：一次性画多条  
     13、CGContextFillPath(context rect)	//绘制填充路径  
@@ -102,25 +102,25 @@ Quartz－2D绘图之路径（Paths）详解
 
 首先使用Quartz的CGPath来做这张图。很简单，首先创建用于转移坐标的Transform，然后创建一个CGMutablePathRef（属于CGPath类型）对象。接着通过两个CGPathAddEllipseInRect和一个CGPathAddArc函数来绘制Path中的两个眼睛和一个嘴，注意把CGAffineTransform的地址传进去，这样Transform才会应用。接着把这个创建好的CGPath加入到当前CGContextRef中，最后通过CGContextRef执行绘画。
 
-CGPathCreateMutable 		创建一个可变图形的路径 需要自己释放
-CGPathCreateWithEllipseInRect 	创建一个椭圆形的不可改变的路径
-CGPathCreateWithRect 		创建一个不变的矩形路径
-CGPathCreateCopy 			创建一个不可变的可以拷贝的路径
-CGPathCreateCopyByTransformingPath 	由一个转换矩阵变换一个图形路径创建一个不可变的副本
-CGPathCreateCopyByDashingPath 		创建一个虚线路径可以复制的
-CGPathCreateCopyByStrokingPath 		创建一个画的路径
-CGPathCreateMutableCopy 			创建一个现有的图形路径的副本
-CGPathCreateMutableCopyByTransformingPath 创建一个由一个转换矩阵变换一个图形路径的可变副本
-CGPathRelease 	递减保留的图形路径计数
-CGPathRetain 	增加保留的图形路径计数
+    CGPathCreateMutable                 创建一个可变图形的路径 需要自己释放    
+    CGPathCreateWithEllipseInRect       创建一个椭圆形的不可改变的路径   
+    CGPathCreateWithRect                创建一个不变的矩形路径   
+    CGPathCreateCopy                    创建一个不可变的可以拷贝的路径   
+    CGPathCreateCopyByTransformingPath 	由一个转换矩阵变换一个图形路径创建一个不可变的副本   
+    CGPathCreateCopyByDashingPath 		创建一个虚线路径可以复制的   
+    CGPathCreateCopyByStrokingPath 		创建一个画的路径   
+    CGPathCreateMutableCopy 			创建一个现有的图形路径的副本   
+    CGPathCreateMutableCopyByTransformingPath 创建一个由一个转换矩阵变换一个图形路径的可变副本   
+    CGPathRelease 	递减保留的图形路径计数   
+    CGPathRetain 	增加保留的图形路径计数   
 
-CGPathAddArc 		一个弧形追加一个可变图形的路径， 可能由直线段之前
-CGPathAddEllipseInRect 	添加一个适合的椭圆在矩形的内部
-CGPathEqualToPath 		两个图形路径是否相等
-CGPathGetBoundingBox 	返回图形路径中包含所有点的包围盒
-CGPathGetPathBounding	Box 返回图形路径的边界框
-CGPathGetCurrentPoint 	返回当前点的路径
-CGPathGetTypeID 		返回Quartz图形路径的核心基础类型的标识符
-CGPathIsEmpty 		指示路径是否为空
-CGPathIsRect 		图形路径指示是否代表一个矩形
-CGPathContainsPoint 	检查一个点是否在图形路径中
+    CGPathAddArc 		一个弧形追加一个可变图形的路径， 可能由直线段之前   
+    CGPathAddEllipseInRect 	添加一个适合的椭圆在矩形的内部   
+    CGPathEqualToPath 		两个图形路径是否相等   
+    CGPathGetBoundingBox 	返回图形路径中包含所有点的包围盒   
+    CGPathGetPathBounding	Box 返回图形路径的边界框   
+    CGPathGetCurrentPoint 	返回当前点的路径   
+    CGPathGetTypeID 		返回Quartz图形路径的核心基础类型的标识符   
+    CGPathIsEmpty           指示路径是否为空   
+    CGPathIsRect            图形路径指示是否代表一个矩形   
+    CGPathContainsPoint 	检查一个点是否在图形路径中   
