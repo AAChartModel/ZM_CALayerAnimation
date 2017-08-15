@@ -42,10 +42,11 @@ iOS绘图和动画
     30、CGImageCreateWithImageInRect 	从原图片中取小图  
 
 
-    17 字符串的 写入可用   NSString本身的画图方法     
+
+17 字符串的 写入可用   NSString本身的画图方法     
     - (CGSize)drawInRect:(CGRect)rect withFont:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(UITextAlignment)alignment;    
 
-    18 对图片放大缩小的功能就是慢了点     
+18 对图片放大缩小的功能就是慢了点     
    UIGraphicsBeginImageContext(newSize);    
    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();    
    UIGraphicsEndImageContext();       
