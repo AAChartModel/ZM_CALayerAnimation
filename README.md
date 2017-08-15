@@ -48,10 +48,13 @@ iOS绘图和动画
     18 对图片放大缩小的功能就是慢了点     
    UIGraphicsBeginImageContext(newSize);    
    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();    
-   UIGraphicsEndImageContext();    
+   UIGraphicsEndImageContext();       
+
  
-    19 CGColorGetComponents（） 返回颜色的各个值： 以及透明度 可用只读const float 来接收 是个数组    
-    20 画图片 CGImageRef image＝ CGImageRetain(img.CGImage);    
+    19 CGColorGetComponents（） 返回颜色的各个值： 以及透明度 可用只读const float 来接收 是个数组     
+
+    20 画图片 CGImageRef image＝ CGImageRetain(img.CGImage);   
+
        CGContextDrawImage(context, CGRectMake(10.0, height-100.0, 90.0, 90.0), image);    
 
     21 实现逐变颜色填充方法 CGContextClip(context);    
@@ -65,12 +68,12 @@ iOS绘图和动画
     };    
     CGGradientRef gradient = CGGradientCreateWithColorComponents           
    (rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));    
-    CGColorSpaceRelease(rgb);        
-    CGContextDrawLinearGradient(context, gradient,CGPointMake            
-   (0.0,0.0) ,CGPointMake(0.0,self.frame.size.height),                        
+    CGColorSpaceRelease(rgb);   
+    CGContextDrawLinearGradient(context, gradient,CGPointMake(0.0,0.0) ,CGPointMake(0.0,self.frame.size.height),
      kCGGradientDrawsBeforeStartLocation);    
     
-22 注: 画完图后,必须     
+
+    22 注: 画完图后,必须     
 
     先用CGContextStrokePath来描线,即形状     
     后用CGContextFillPath来填充形状内的颜色.     
@@ -85,7 +88,7 @@ iOS绘图和动画
     Description     
     CGContextEOFillPath：        使用奇偶规则填充当前路径    
     CGContextFillPath：          使用非零绕数规则填充当前路径    
-    CGContextFillRect
+    CGContextFillRect   
     CGContextFillRects          填充指定的矩形    
     CGContextFillEllipseInRect	填充指定的一些矩形    
     CGContextDrawPath           填充指定矩形中的椭圆    		
