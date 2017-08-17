@@ -1,5 +1,5 @@
 # ZM_CALayerAnimation
-###iOS绘图和动画
+### iOS绘图和动画
 
 #### 这里有你想要的 几乎所有的绘图和动画
 
@@ -45,7 +45,7 @@
 
 17 字符串的 写入可用   NSString本身的画图方法
 
-```objective-c    
+```objective-c 
 - (CGize)drawInRect:(CGRect)rect withFont:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(UITextAlignment)alignment;    
 ```
 18 对图片放大缩小的功能就是慢了点  
@@ -58,13 +58,15 @@
  
 19 `CGColorGetComponents（）` 返回颜色的各个值： 以及透明度 可用只读`const float`来接收 是个数组     
 
-20 画图片 `CGImageRef image＝ CGImageRetain(img.CGImage);`  
+20 画图片 `CGImageRef image＝ CGImageRetain(img.CGImage);` 
+
 ```objective-c
        CGContextDrawImage(context, CGRectMake(10.0, height-100.0, 90.0, 90.0), image);    
 ```
+
 21 实现逐变颜色填充方法 `CGContextClip(context)`;
 
-  ```objective-c  
+```objective-c  
     CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();    
     CGFloat colors[] =    
     {    
@@ -75,7 +77,7 @@
     CGGradientRef gradient = CGGradientCreateWithColorComponents (rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));    
     CGColorSpaceRelease(rgb);   
     CGContextDrawLinearGradient(context, gradient,CGPointMake(0.0,0.0) ,CGPointMake(0.0,self.frame.size.height),
-     kCGGradientDrawsBeforeStartLocation);    
+    kCGGradientDrawsBeforeStartLocation);    
  ```   
 
 22 注: 画完图后,必须     
@@ -84,9 +86,9 @@
    2. 后用`CGContextFillPath`来填充形状内的颜色.     
 填充一个路径的时候，路径里面的子路径都是独立填充的假如是重叠的路径，决定一个点是否被填充，有两种规则    
 
-1. *nonzero winding number rule*:非零绕数规则，假如一个点被从左到右跨过，计数器`+1`，从右到左跨过，计数器`-1`，最后，如果结果是0，那么不填充，如果是非零，那么填充。    
+1. `nonzero winding number rule`:非零绕数规则，假如一个点被从左到右跨过，计数器`+1`，从右到左跨过，计数器`-1`，最后，如果结果是0，那么不填充，如果是非零，那么填充。    
 
-2. *even-odd rule*: 奇偶规则，假如一个点被跨过，那么`+1`，最后是奇数，那么要被填充，偶数则不填充，和方向没有关系。    
+2. `even-odd rule`: 奇偶规则，假如一个点被跨过，那么`+1`，最后是奇数，那么要被填充，偶数则不填充，和方向没有关系。    
    
     Function    
     Description     
@@ -96,7 +98,8 @@
     CGContextFillRects          填充指定的矩形    
     CGContextFillEllipseInRect	填充指定的一些矩形    
     CGContextDrawPath           填充指定矩形中的椭圆    		
-    两个参数决定填充规则，`kCGPathFill`表示用非零绕数规则，`kCGPathEOFill`表示用奇偶规则，`kCGPathFillStroke`表示填充，`kCGPathEOFillStroke`表示描线，不是填充    
+
+两个参数决定填充规则，`kCGPathFill`表示用非零绕数规则，`kCGPathEOFill`表示用奇偶规则，`kCGPathFillStroke`表示填充，`kCGPathEOFillStroke`表示描线，不是填充    
  
 设置当一个颜色覆盖上另外一个颜色，两个颜色怎么混合?默认方式是:
 
