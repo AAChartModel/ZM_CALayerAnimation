@@ -43,30 +43,35 @@
 
 
 
-17 字符串的 写入可用   NSString本身的画图方法
+17. 字符串的 写入可用   NSString本身的画图方法
 
 ```objective-c 
 - (CGize)drawInRect:(CGRect)rect withFont:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(UITextAlignment)alignment;    
 ```
-18 对图片放大缩小的功能就是慢了点  
+18. 对图片放大缩小的功能就是慢了点  
 
 ```objective-c   
+
    UIGraphicsBeginImageContext(newSize);    
    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();    
-   UIGraphicsEndImageContext();       
+   UIGraphicsEndImageContext(); 
+   
 ```
  
-19 `CGColorGetComponents（）` 返回颜色的各个值： 以及透明度 可用只读`const float`来接收 是个数组     
+19. `CGColorGetComponents（）` 返回颜色的各个值： 以及透明度 可用只读`const float`来接收 是个数组     
 
-20 画图片 `CGImageRef image＝ CGImageRetain(img.CGImage);` 
+20. 画图片 `CGImageRef image＝ CGImageRetain(img.CGImage);` 
 
 ```objective-c
-       CGContextDrawImage(context, CGRectMake(10.0, height-100.0, 90.0, 90.0), image);    
+
+ CGContextDrawImage(context, CGRectMake(10.0, height-100.0, 90.0, 90.0), image); 
+ 
 ```
 
-21 实现逐变颜色填充方法 `CGContextClip(context)`;
+21. 实现逐变颜色填充方法 `CGContextClip(context)`;
 
 ```objective-c  
+
     CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();    
     CGFloat colors[] =    
     {    
@@ -77,10 +82,12 @@
     CGGradientRef gradient = CGGradientCreateWithColorComponents (rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));    
     CGColorSpaceRelease(rgb);   
     CGContextDrawLinearGradient(context, gradient,CGPointMake(0.0,0.0) ,CGPointMake(0.0,self.frame.size.height),
-    kCGGradientDrawsBeforeStartLocation);    
+    kCGGradientDrawsBeforeStartLocation);
+    
  ```   
 
-22 注: 画完图后,必须     
+
+22. 注: 画完图后,必须     
 
    1. 先用`CGContextStrokePath`来描线,即形状     
    2. 后用`CGContextFillPath`来填充形状内的颜色.     
@@ -104,12 +111,14 @@
 设置当一个颜色覆盖上另外一个颜色，两个颜色怎么混合?默认方式是:
 
     ```objective-c 
+    
     result = (alpha * foreground) + (1 - alpha) * background    
     CGContextSetBlendMode 	              //设置blend mode.    
     CGContextSaveGState 	              //保存blend mode.    
     CGContextRestoreGState	              //在没有保存之前，用这个函数还原blend mode.    
     CGContextSetBlendMode 	              //混合俩种颜色    
-    CGContextClearRect(context,rect)      //擦除全部所画的       
+    CGContextClearRect(context,rect)      //擦除全部所画的
+    
     ```
 
 
